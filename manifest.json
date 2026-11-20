@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "All Window Links",
+  "version": "1.0.0",
+  "description": "Copy the links of every tab in the current window, one per line.",
+  "permissions": ["tabs"],
+  "action": {
+    "default_title": "Copy all links in this window",
+    "default_popup": "popup.html"
+  }
+}
