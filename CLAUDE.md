@@ -15,4 +15,4 @@ Plain JavaScript, Manifest V3. No build step, no dependencies.
 - Output format is one link per line, joined with `\n`, no trailing newline.
 
 ## Gotchas
-- `navigator.clipboard.writeText` only works while the popup has focus, so the copy runs in the popup, not in a service worker.
+- `navigator.clipboard.writeText` only works while the popup has focus, so the copy runs in the popup, not in a service worker. In Brave the popup script can run before the popup has focus, so it waits for the `focus` event first.

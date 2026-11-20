@@ -7,6 +7,8 @@ if (links.length === 0) {
   status.textContent = 'No links found';
 } else {
   try {
+    // The popup can run before it gets focus, and writeText fails without focus.
+    if (!document.hasFocus()) await new Promise((resolve) => window.addEventListener('focus', resolve, { once: true }));
     await navigator.clipboard.writeText(links.join('\n'));
     status.textContent = `Copied ${links.length} link${links.length === 1 ? '' : 's'}`;
   } catch (err) {
